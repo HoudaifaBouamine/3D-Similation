@@ -5,7 +5,7 @@
 void runSimilation() {
 
 	initSDL();
-	
+	initProgram();
 	while (true) {
 
 		SDL_RenderClear(app.renderer);

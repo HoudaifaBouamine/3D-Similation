@@ -35,3 +35,8 @@ void initSDL() {
 	IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG);
 
 }
+
+void initProgram() {
+
+	SDL_SetRenderDrawColor(app.renderer, 100, 100, 100, 255);
+}
