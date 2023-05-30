@@ -1,6 +1,15 @@
 #pragma once
-#include "global.h"
-#include "sdl2/SDL.h"
-#include "sdl2/SDL_main.h"
-#include "sdl2/SDL_image.h"
+#include "libreries_include.h"
 // 3d logic write here
+
+void runSimilation() {
+
+	initSDL();
+	
+	while (true) {
+
+		SDL_RenderClear(app.renderer);
+		SDL_RenderPresent(app.renderer);
+	}
+
+}
