@@ -38,5 +38,4 @@ void initSDL() {
 
 void initProgram() {
 
-	SDL_SetRenderDrawColor(app.renderer, 100, 100, 100, 255);
 }

@@ -133,6 +133,7 @@
   <ItemGroup>
     <ClInclude Include="3d.h" />
     <ClInclude Include="defs.h" />
+    <ClInclude Include="draw.h" />
     <ClInclude Include="global.h" />
     <ClInclude Include="init.h" />
     <ClInclude Include="input.h" />
