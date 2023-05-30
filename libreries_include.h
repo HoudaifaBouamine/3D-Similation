@@ -9,3 +9,4 @@
 #include "init.h"
 #include "defs.h"
 #include "global.h"
+#include "input.h"

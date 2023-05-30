@@ -9,6 +9,7 @@ void runSimilation() {
 	while (true) {
 
 		SDL_RenderClear(app.renderer);
+		doInput();
 		SDL_RenderPresent(app.renderer);
 	}
 

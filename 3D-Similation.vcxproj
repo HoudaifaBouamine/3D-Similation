@@ -135,6 +135,7 @@
     <ClInclude Include="defs.h" />
     <ClInclude Include="global.h" />
     <ClInclude Include="init.h" />
+    <ClInclude Include="input.h" />
     <ClInclude Include="libreries_include.h" />
     <ClInclude Include="struct.h" />
     <ClInclude Include="util.h" />
