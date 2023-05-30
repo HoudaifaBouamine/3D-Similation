@@ -23,11 +23,24 @@ void runSimilation() {
 	initSDL();
 	initProgram();
 
+	Rectangle rectangle(app.renderer,500,300,150,70);
+	Rectangle square(app.renderer,400, 400, 80, 80);
+
+
 	while (true) {
 
 		clear_renderer();
+
+
 		doInput();
+		rectangle.draw();
+		rectangle.rotate(650, 400,0.05);
+
+		square.draw();
+		square.rotate(440, 440, 0.15);
+
 		SDL_RenderPresent(app.renderer);
+		SDL_Delay(16);
 	}
 
 }
