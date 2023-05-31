@@ -2,6 +2,7 @@
 // Util functions defined here
 #include <cmath>
 #include "struct.h"
+#include <Windows.h>
 
 void rotatePoint_OZ(float& x, float& y, short ox, short oy, float angle) {
 
@@ -15,3 +16,9 @@ void rotatePoint_OZ(float& x, float& y, short ox, short oy, float angle) {
 	y = oy + new_dy;
 }
 
+
+void clear_screen()
+
+{
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { 0,0 });
+}

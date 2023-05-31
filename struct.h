@@ -16,45 +16,46 @@ struct Point {
 	float x, y, z;
 
 
-	void rotatePoint_OZ(Point originPoint, float angle) {
+	void rotatePoint_OZ(Point originPoint, float angleOZ) {
 
 		float dx = this->x - originPoint.x;
 		float dy = this->y - originPoint.y;
 
-		float new_dx = dx * cos(angle) - dy * sin(angle);
-		float new_dy = dx * sin(angle) + dy * cos(angle);
+		float new_dx = dx * cos(angleOZ) - dy * sin(angleOZ);
+		float new_dy = dx * sin(angleOZ) + dy * cos(angleOZ);
 
 		this->x = originPoint.x + new_dx;
 		this->y = originPoint.y + new_dy;
 	}
 
-	void rotatePoint_OY(Point originPoint, float angle) {
+	void rotatePoint_OY(Point originPoint, float angleOY) {
 
 		float dx = this->x - originPoint.x;
 		float dz = this->z - originPoint.z;
 
-		float new_dx = dx * cos(angle) - dz * sin(angle);
-		float new_dz = dx * sin(angle) + dz * cos(angle);
+		float new_dx = dx * cos(angleOY) - dz * sin(angleOY);
+		float new_dz = dx * sin(angleOY) + dz * cos(angleOY);
 
 		this->x = originPoint.x + new_dx;
 		this->z = originPoint.z + new_dz;
 	}
 
-	void rotatePoint_OX(Point originPoint, float angle) {
+	void rotatePoint_OX(Point originPoint, float angleOX) {
 
 		float dy = this->y - originPoint.y;
 		float dz = this->z - originPoint.z;
 
-		float new_dy = dy * cos(angle) - dz * sin(angle);
-		float new_dz = dy * sin(angle) + dz * cos(angle);
+		float new_dy = dy * cos(angleOX) - dz * sin(angleOX);
+		float new_dz = dy * sin(angleOX) + dz * cos(angleOX);
 
 		this->y = originPoint.y + new_dy;
 		this->z = originPoint.z + new_dz;
 	}
+
 
 	void rotatePoint(Point originPoint, float angleOX, float angleOY, float angleOZ) {
 
-
+	
 		rotatePoint_OX(originPoint, angleOX);
 		rotatePoint_OY(originPoint, angleOY);
 		rotatePoint_OZ(originPoint, angleOZ);
@@ -300,6 +301,16 @@ struct Cuboid {
 			points[i].rotatePoint_OY(origin, angleOY);
 			points[i].rotatePoint_OZ(origin, angleOZ);
 		}
+	}
+
+	void draw(char r, char g, char b) {
+
+		SDL_SetRenderDrawColor(renderer, r, g, b,255);
+
+		draw();
+
+		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+
 	}
 
 	void draw() {

@@ -13,7 +13,7 @@ void initSDL() {
 		exit(1);
 	}
 
-	app.window = SDL_CreateWindow("3D Renderer", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, windowFlags);
+	app.window = SDL_CreateWindow("3D Renderer", 200, 50, SCREEN_WIDTH, SCREEN_HEIGHT, windowFlags);
 
 	if (!app.window) {
 

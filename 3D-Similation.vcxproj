@@ -132,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="3d.h" />
+    <ClInclude Include="benchmark.h" />
     <ClInclude Include="defs.h" />
     <ClInclude Include="draw.h" />
     <ClInclude Include="global.h" />
