@@ -210,7 +210,9 @@ struct Cuboid {
 		points[7].y = y + h;
 		points[7].z = z + d;
 
-
+		center.x = x + w / 2;
+		center.y = y + h / 2;
+		center.z = z + d / 2;
 	}
 
 	void set_center(short center_x, short center_y, short center_z) {
@@ -263,10 +265,19 @@ struct Cuboid {
 
 	void draw() {
 
-		for (char i = 0; i < 8; i++)
-		{
-			SDL_RenderDrawPoint(this->renderer, points[i].x, points[i].y);
-		}
+		SDL_RenderDrawLine(renderer, points[0].x, points[0].y, points[1].x, points[1].y);
+		SDL_RenderDrawLine(renderer, points[0].x, points[0].y, points[2].x, points[2].y);
+		SDL_RenderDrawLine(renderer, points[3].x, points[3].y, points[1].x, points[1].y);
+		SDL_RenderDrawLine(renderer, points[3].x, points[3].y, points[2].x, points[2].y);
 
+		SDL_RenderDrawLine(renderer, points[4].x, points[4].y, points[5].x, points[5].y);
+		SDL_RenderDrawLine(renderer, points[4].x, points[4].y, points[6].x, points[6].y);
+		SDL_RenderDrawLine(renderer, points[7].x, points[7].y, points[5].x, points[5].y);
+		SDL_RenderDrawLine(renderer, points[7].x, points[7].y, points[6].x, points[6].y);
+
+		SDL_RenderDrawLine(renderer, points[0].x, points[0].y, points[4].x, points[4].y);
+		SDL_RenderDrawLine(renderer, points[1].x, points[1].y, points[5].x, points[5].y);
+		SDL_RenderDrawLine(renderer, points[2].x, points[2].y, points[6].x, points[6].y);
+		SDL_RenderDrawLine(renderer, points[3].x, points[3].y, points[7].x, points[7].y);
 	}
 };

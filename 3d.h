@@ -26,19 +26,14 @@ void runSimilation() {
 	
 	
 
-	Point c;
-	c.x = 150;
-	c.y = 150;
-	c.z = 150;
-
-	Cuboid cube(app.renderer,100,100,100,100,100,100);
+	Cuboid cube(app.renderer,400,300,300,200,200,200);
 
 
 	while (true) {
 
 		clear_renderer();
 		doInput();
-		cube.rotate(c, 0.01, 0.01, 0.01);
+		cube.rotate(cube.center, 0.015, 0.01, 0.01);
 
 		cube.draw();
 
