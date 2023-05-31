@@ -11,26 +11,31 @@ struct App {
 
 };
 
+struct Point {
+
+	float x, y, z;
+};
+
 struct Rectangle {
 
 	
-
-	float x1, y1, x2, y2, x3, y3, x4, y4,xc,yc,w,h;
+	Point points[4];
+	float xc,yc,w,h;
 	SDL_Renderer* renderer;
 
 	Rectangle(SDL_Renderer* renderer,short x,short y,short w,short h) {
 
-		x1 = x;
-		y1 = y;
+		points[0].x = x;
+		points[0].y = y;
 
-		x2 = x + w;
-		y2 = y;
+		points[1].x = x + w;
+		points[1].y = y;
 
-		x3 = x;
-		y3 = y + h;
+		points[2].x = x;
+		points[2].y = y + h;
 
-		x4 = x + w;
-		y4 = y + h;
+		points[3].x = x + w;
+		points[3].y = y + h;
 
 		this->renderer = renderer;
 
@@ -46,15 +51,15 @@ struct Rectangle {
 		float dx = center_x - xc;
 		float dy = center_y - yc;
 
-		x1 += dx;
-		x2 += dx;
-		x3 += dx;
-		x4 += dx;
+		points[0].x += dx;
+		points[1].x += dx;
+		points[2].x += dx;
+		points[3].x += dx;
 
-		y1 += dy;
-		y2 += dy;
-		y3 += dy;
-		y4 += dy;
+		points[0].y += dy;
+		points[1].y += dy;
+		points[2].y += dy;
+		points[3].y += dy;
 
 		xc = center_x;
 		yc = center_y;
@@ -62,10 +67,10 @@ struct Rectangle {
 
 	void rotate(short ox,short oy,float angle) {
 
-		rotatePoint(x1, y1, ox, oy, angle);
-		rotatePoint(x2, y2, ox, oy, angle);
-		rotatePoint(x3, y3, ox, oy, angle);
-		rotatePoint(x4, y4, ox, oy, angle);
+		rotatePoint(points[0].x, points[0].y, ox, oy, angle);
+		rotatePoint(points[1].x, points[1].y, ox, oy, angle);
+		rotatePoint(points[2].x, points[2].y, ox, oy, angle);
+		rotatePoint(points[3].x, points[3].y, ox, oy, angle);
 
 		rotatePoint(xc, yc, ox, oy, angle);
 
@@ -74,10 +79,10 @@ struct Rectangle {
 
 	void draw() {
 
-		SDL_RenderDrawLine(renderer, x1, y1, x2, y2);
-		SDL_RenderDrawLine(renderer, x1, y1, x3, y3);
-		SDL_RenderDrawLine(renderer, x4, y4, x2, y2);
-		SDL_RenderDrawLine(renderer, x4, y4, x3, y3);
+		SDL_RenderDrawLine(renderer, points[0].x, points[0].y, points[1].x, points[1].y);
+		SDL_RenderDrawLine(renderer, points[0].x, points[0].y, points[2].x, points[2].y);
+		SDL_RenderDrawLine(renderer,points[3].x, points[3].y, points[1].x, points[1].y);
+		SDL_RenderDrawLine(renderer,points[3].x, points[3].y, points[2].x, points[2].y);
 
 
 	
