@@ -1,8 +1,9 @@
 #pragma once
-#include "libreries_include.h"
 // Util functions defined here
+#include <cmath>
+#include "struct.h"
 
-void rotatePoint(float& x, float& y, short ox, short oy, float angle) {
+void rotatePoint_OZ(float& x, float& y, short ox, short oy, float angle) {
 
 	float dx = x - ox;
 	float dy = y - oy;
@@ -13,3 +14,4 @@ void rotatePoint(float& x, float& y, short ox, short oy, float angle) {
 	x = ox + new_dx;
 	y = oy + new_dy;
 }
+

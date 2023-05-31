@@ -23,24 +23,24 @@ void runSimilation() {
 	initSDL();
 	initProgram();
 
-	Rectangle rectangle(app.renderer,500,300,300,160);
-	Rectangle square1(app.renderer,0, 0, 80, 80);
-	Rectangle square2(app.renderer,0, 0, 80, 80);
-	Rectangle square3(app.renderer,0, 0, 80, 80);
-	Rectangle square4(app.renderer,0, 0, 80, 80);
+	
+	
+
+	Point c;
+	c.x = 150;
+	c.y = 150;
+	c.z = 150;
+
+	Cuboid cube(app.renderer,100,100,100,100,100,100);
 
 
 	while (true) {
 
 		clear_renderer();
-
-
 		doInput();
-		rectangle.rotate(650, 380,0.05);
-		rectangle.draw();
+		cube.rotate(c, 0.01, 0.01, 0.01);
 
-
-		
+		cube.draw();
 
 		SDL_RenderPresent(app.renderer);
 		SDL_Delay(16);
