@@ -253,6 +253,45 @@ struct Cuboid {
 		center.z = center_z;
 	}
 
+	void set_center(Point new_center) {
+
+		float dx = new_center.x - center.x;
+		float dy = new_center.y - center.y;
+		float dz = new_center.z - center.z;
+
+		points[0].x += dx;
+		points[1].x += dx;
+		points[2].x += dx;
+		points[3].x += dx;
+		points[4].x += dx;
+		points[5].x += dx;
+		points[6].x += dx;
+		points[7].x += dx;
+
+		points[0].y += dy;
+		points[1].y += dy;
+		points[2].y += dy;
+		points[3].y += dy;
+		points[4].y += dy;
+		points[5].y += dy;
+		points[6].y += dy;
+		points[7].y += dy;
+
+		points[0].z += dz;
+		points[1].z += dz;
+		points[2].z += dz;
+		points[3].z += dz;
+		points[4].z += dz;
+		points[5].z += dz;
+		points[6].z += dz;
+		points[7].z += dz;
+
+		center.x = new_center.x;
+		center.y = new_center.y;
+		center.z = new_center.z;
+	}
+
+
 	void rotate(Point origin,float angleOX,float angleOY,float angleOZ) {
 
 		for (size_t i = 0; i < 8; i++)
